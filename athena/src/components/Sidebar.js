@@ -50,7 +50,6 @@ const Sidebar = () => {
         justifyContent="center"
         my={2}
         sx={{
-
           py: 2,
         }}
       >
@@ -68,7 +67,7 @@ const Sidebar = () => {
           variant="h6"
           sx={{
             ml: 1,
-            color: 'Black',
+            color: '#1e293b', // Dark color for better contrast
             fontWeight: 'bold',
           }}
         >

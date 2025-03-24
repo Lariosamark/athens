@@ -1,68 +1,77 @@
 import React from 'react';
 import { Box, Card, CardContent, Typography, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+
 const Dashboard = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+
   return (
-    
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        bgcolor: '#f5f5f5',
-      }}
-    >
       <Card
         sx={{
           width: 400,
-          boxShadow: 3,
-          borderRadius: 3,
-          p: 2,
+          boxShadow: 5,
+          borderRadius: 4,
+          p: 3,
           backgroundColor: '#ffffff',
+          transition: 'transform 0.3s',
+          '&:hover': {
+            transform: 'scale(1.05)', // Slight zoom effect on hover
+          },
         }}
       >
         <CardContent>
+          {/* Logo Section */}
+          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+            <img
+              src="logo-icon.png" // Replace with your logo path
+              alt="Logo"
+              style={{ width: '100px', height: 'auto' }} // Adjust size as needed
+            />
+          </Box>
           <Typography
             variant="h4"
             gutterBottom
-            sx={{ fontWeight: 'bold', textAlign: 'center', color: '#1e3a8a' }}
+            sx={{
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: '#0d47a1', // Darker blue for better contrast
+            }}
           >
             Welcome to Your Dashboard!
           </Typography>
           <Typography
             variant="body1"
             sx={{
-              mb: 3,
+              mb: 4,
               textAlign: 'center',
-              color: '#6b7280',
+              color: '#546e7a', // Muted text color
+              lineHeight: 1.5,
             }}
           >
-            Track your progress and manage your profile easily.
+            Track your progress and manage your profile easily. Let's get started!
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-          <Button
-  variant="contained"
-  color="primary"
-  size="large"
-  sx={{
-    textTransform: 'none',
-    borderRadius: 2,
-    px: 4,
-    backgroundColor: '#1e3a8a',
-    '&:hover': {
-      backgroundColor: '#172554',
-    },
-  }}
-  onClick={() => navigate('/User-Home')} // Navigate to user home
->
-  Get Started
-</Button>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              sx={{
+                textTransform: 'none',
+                borderRadius: 3,
+                px: 5,
+                backgroundColor: '#1976d2', // Primary color
+                '&:hover': {
+                  backgroundColor: '#1565c0', // Darker shade on hover
+                },
+                boxShadow: 2,
+              }}
+              onClick={() => navigate('/User-Home')} // Navigate to user home
+            >
+              Get Started
+            </Button>
           </Box>
         </CardContent>
       </Card>
-    </Box>
   );
 };
 

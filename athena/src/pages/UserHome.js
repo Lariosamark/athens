@@ -5,8 +5,9 @@ import { useNavigate } from 'react-router-dom';
 const UserHome = () => {
   const navigate = useNavigate();
 
+  // Navigate to exams page when "Get Started" is clicked
   const handleGetStarted = () => {
-    navigate('/exams'); // Redirect to exams page
+    navigate('/exams');
   };
 
   return (
@@ -15,16 +16,19 @@ const UserHome = () => {
         Welcome to the Online Exam System!
       </Typography>
       <Typography variant="body1" mb={4}>
-        Prepare yourself by taking a variety of exams curated by the admin.
+        Click below to get started with your exam.
       </Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        size="large"
-        onClick={handleGetStarted}
-      >
-        Get Started
-      </Button>
+
+      <Box sx={{ mt: 4 }}>
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          onClick={handleGetStarted}
+        >
+          Get Started
+        </Button>
+      </Box>
     </Container>
   );
 };
